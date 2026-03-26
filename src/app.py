@@ -130,3 +130,13 @@ def unregister_from_activity(activity_name: str, email: str):
     # Remove student
     activity["participants"].remove(email)
     return {"message": f"Unregistered {email} from {activity_name}"}
+
+
+@app.get("/exercise-status")
+def exercise_status():
+    """Check completion status of issue #1 exercise setup."""
+    return {
+        "issue": 1,
+        "status": "in progress",
+        "details": "MCP with Copilot exercise checkpoint endpoint added."
+    }
